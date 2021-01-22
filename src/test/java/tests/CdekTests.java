@@ -6,8 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.ClickOptions.usingJavaScript;
 import static com.codeborne.selenide.CollectionCondition.itemWithText;
-import static com.codeborne.selenide.Condition.or;
-import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -60,5 +59,19 @@ public class CdekTests extends TestBase {
         $(byText("Рассчитать")).click(usingJavaScript());
 
         $x("//button[@class=\"calculator-service\"]").shouldHave(text("1 070 ₽"));
+    }
+
+    @Test
+    @DisplayName("Проверка работы посылочки")
+    void calculatorParcelTest() {
+        open("https://www.cdek.ru/ru/box");
+
+        $$x("//input[@placeholder=\"Город назначения\"]").find(visible).setValue("Ухта");
+        $(byText("Ухта, Коми, Россия")).click();
+        $$x("//input[@placeholder=\"Размер посылки\"]").find(visible).click();
+        $(byText("Размер S")).click();
+        $$(".form-calculate__footer > button").last().click();
+
+        $$(".result-calculate__cost").last().shouldHave(text("350 ₽"));
     }
 }

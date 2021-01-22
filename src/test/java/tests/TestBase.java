@@ -22,6 +22,7 @@ public class TestBase {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
+        Configuration.browserSize = "1600x1200";
         Configuration.browserCapabilities = capabilities;
         if (System.getProperty("remote.browser.url") != null)
             Configuration.remote = "https://user1:1234@" + System.getProperty("remote.browser.url") + ":4444/wd/hub/";
