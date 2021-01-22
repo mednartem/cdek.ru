@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.ClickOptions.usingJavaScript;
 import static com.codeborne.selenide.CollectionCondition.itemWithText;
+import static com.codeborne.selenide.Condition.or;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selectors.byText;
@@ -40,7 +41,9 @@ public class CdekTests extends TestBase {
         $("#loginform-login").setValue("123123123");
         $("#loginform-password").setValue("123123123123").pressEnter();
 
-        $(".has-error").shouldHave(text("Неверный пароль или логин пользователя."));
+        $(".has-error").shouldHave(
+                or("Error depends on location", text("Неверный пароль или логин пользователя."), text("Wrong password or user login."))
+        );
     }
 
     @Test
