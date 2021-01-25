@@ -22,6 +22,7 @@ public class TestBase {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
 
+        Configuration.baseUrl = "https://www.cdek.ru/ru/";
         Configuration.browserSize = "1600x1200";
         Configuration.browserCapabilities = capabilities;
         if (System.getProperty("remote.browser.url") != null)
@@ -31,12 +32,12 @@ public class TestBase {
     @AfterEach
     @Step("Attachments")
     public void afterEach() {
-        attachScreenshot("Last screenshot");
-        attachPageSource();
-        attachAsText("Browser console logs", getConsoleLogs());
-        if (System.getProperty("remote.browser.url") != null)
+        if (System.getProperty("remote.browser.url") != null) {
+            attachScreenshot("Last screenshot");
+            attachPageSource();
+            attachAsText("Browser console logs", getConsoleLogs());
             attachVideo();
-
+        }
         closeWebDriver();
     }
 }
