@@ -59,9 +59,9 @@ public class CdekTests extends TestBase {
     void calculatorTest() {
         step("Open Calculate page", () -> open("calculate"));
         step("Fill required fields valid data and click calculate button", () -> {
-            $x("//label[text()=\"Откуда забираем\"]/..//input").setValue("Москва");
+            $(byText("Откуда забираем")).parent().$("input").setValue("Москва");
             $(byText("Москва, Москва, Россия")).click();
-            $x("//label[text()=\"Куда доставляем\"]/..//input").setValue("Ухта");
+            $(byText("Куда доставляем")).parent().$("input").setValue("Ухта");
             $(byText("Ухта, Коми, Россия")).click();
             $(byName("radio")).click(usingJavaScript());
             $(byText("Конверт")).click(usingJavaScript());
@@ -77,9 +77,9 @@ public class CdekTests extends TestBase {
     void calculatorParcelTest() {
         step("Open Parcel page", () -> open("box"));
         step("Fill required fields valid data and click calculate button", () -> {
-            $$x("//input[@placeholder=\"Город назначения\"]").find(visible).setValue("Ухта");
+            $$("[placeholder=\"Город назначения\"]").find(visible).setValue("Ухта");
             $(byText("Ухта, Коми, Россия")).click();
-            $$x("//input[@placeholder=\"Размер посылки\"]").find(visible).click();
+            $$("[placeholder=\"Размер посылки\"]").find(visible).click();
             $(byText("Размер S")).click();
             $$(".form-calculate__footer > button").last().click();
         });
