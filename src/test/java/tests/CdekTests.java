@@ -23,7 +23,6 @@ public class CdekTests extends TestBase {
         });
     }
 
-
     @Test
     @Disabled("Need credentials for authorization")
     @DisplayName("Successful authorization")
