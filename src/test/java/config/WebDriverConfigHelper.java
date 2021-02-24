@@ -16,6 +16,10 @@ public class WebDriverConfigHelper {
                 getConfig().remoteDriverUrl() + "/wd/hub";
     }
 
+    public static String getRemoteDriverUrl() {
+        return getConfig().remoteDriverUrl();
+    }
+
     public static boolean isRemoteWebDriver() {
         return !getConfig().remoteDriverUrl().equals("");
     }
