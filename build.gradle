@@ -63,7 +63,7 @@ tasks.withType(Test) {
         ]
     } else {
         systemProperties += [
-                'junit.jupiter.execution.parallel.config.fixed.parallelism': 4
+                'junit.jupiter.execution.parallel.config.fixed.parallelism': 1
         ]
     }
 

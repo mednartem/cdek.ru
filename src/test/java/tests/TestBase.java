@@ -2,9 +2,11 @@ package tests;
 
 
 import com.codeborne.selenide.Configuration;
+import io.qameta.allure.junit5.AllureJunit5;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
@@ -12,6 +14,7 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static config.Constants.*;
 import static helpers.AttachmentsHelper.*;
 
+@ExtendWith(AllureJunit5.class)
 public class TestBase {
     @BeforeAll
     static void setup() {
@@ -36,8 +39,8 @@ public class TestBase {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
+        if (IS_VIDEO_ON) attachVideo(getSessionId());
         closeWebDriver();
 
-        if (IS_VIDEO_ON) attachVideo(getSessionId());
     }
 }
