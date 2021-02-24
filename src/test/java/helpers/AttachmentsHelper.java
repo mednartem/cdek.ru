@@ -38,7 +38,7 @@ public class AttachmentsHelper {
     }
 
     public static String getVideoUrl() {
-        return "https://" + getWebRemoteDriver() + "/video/" + getSessionId() + ".mp4";
+        return "https://" + getVideoUrl() + "/video/" + getSessionId() + ".mp4";
     }
 
     public static String getSessionId() {
