@@ -2,7 +2,6 @@ package tests;
 
 
 import com.codeborne.selenide.Configuration;
-import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -31,7 +30,6 @@ public class TestBase {
     }
 
     @AfterEach
-    @Step("Attachments")
     public void afterEach() {
         if (isRemoteWebDriver()) {
             attachScreenshot("Last screenshot");

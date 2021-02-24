@@ -13,7 +13,7 @@ public class WebDriverConfigHelper {
     public static String getWebRemoteDriver() {
         return "https://" + getConfig().remoteDriverUser() + ":" +
                 getConfig().remoteDriverPassword() + "@" +
-                getConfig().remoteDriverUrl() + "/wd/hub";
+                getRemoteDriverUrl() + "/wd/hub";
     }
 
     public static String getRemoteDriverUrl() {
