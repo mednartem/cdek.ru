@@ -16,12 +16,20 @@ public class WebDriverConfigHelper {
                 getRemoteDriverUrl() + "/wd/hub";
     }
 
+    public static String getWebVideoStorage() {
+        return "https://" + getRemoteDriverUrl() + "/video/";
+    }
+
     public static String getRemoteDriverUrl() {
         return getConfig().remoteDriverUrl();
     }
 
     public static boolean isRemoteWebDriver() {
-        return !getConfig().remoteDriverUrl().equals("");
+        return getConfig().remoteDriverUrl() != null;
+    }
+
+    public static boolean isVideo() {
+        return getConfig().isVideo();
     }
 
 }

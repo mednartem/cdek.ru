@@ -18,4 +18,7 @@ public interface WebDriverConfig extends Config {
     @Key("remote.driver.password")
     String remoteDriverPassword();
 
+    @Key("video")
+    Boolean isVideo();
+
 }

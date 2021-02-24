@@ -13,8 +13,9 @@ Then run tests with use terminal:
 Run local
 > gradle test
 
-Run remote (need to pass value remote.browser.url)
-> gradle test -Dremote.browser.url= 
+Run remote (need to pass value remote.driver.url, remote.driver.user, remote.driver.password)
+>  gradle clean test -Dremote.driver.url= -Dremote.driver.user= -Dremote.driver.password=
+
 
 Telegram notifications
 

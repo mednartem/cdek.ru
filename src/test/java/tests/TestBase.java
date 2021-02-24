@@ -9,14 +9,13 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static config.WebDriverConfigHelper.getWebRemoteDriver;
-import static config.WebDriverConfigHelper.isRemoteWebDriver;
+import static config.Constants.*;
 import static helpers.AttachmentsHelper.*;
 
 public class TestBase {
     @BeforeAll
     static void setup() {
-        addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
+        addListener("AllureSelenide", new AllureSelenide().screenshots(false).savePageSource(false));
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
@@ -25,18 +24,20 @@ public class TestBase {
         Configuration.baseUrl = "https://www.cdek.ru/ru/";
         Configuration.browserSize = "1600x1200";
         Configuration.browserCapabilities = capabilities;
-        if (isRemoteWebDriver())
-            Configuration.remote = getWebRemoteDriver();
+        if (IS_REMOTE) {
+            Configuration.remote = REMOTE_DRIVER_URL;
+            Configuration.screenshots = true;
+            Configuration.savePageSource = true;
+        }
     }
 
     @AfterEach
     public void afterEach() {
-        if (isRemoteWebDriver()) {
-            attachScreenshot("Last screenshot");
-            attachPageSource();
-            attachAsText("Browser console logs", getConsoleLogs());
-            attachVideo();
-        }
+        attachScreenshot("Last screenshot");
+        attachPageSource();
+        attachAsText("Browser console logs", getConsoleLogs());
         closeWebDriver();
+
+        if (IS_VIDEO_ON) attachVideo(getSessionId());
     }
 }
