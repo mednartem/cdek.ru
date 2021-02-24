@@ -33,7 +33,7 @@ public class TestBase {
     @AfterEach
     @Step("Attachments")
     public void afterEach() {
-        if (System.getProperty("remote.browser.url") != null) {
+        if (isRemoteWebDriver()) {
             attachScreenshot("Last screenshot");
             attachPageSource();
             attachAsText("Browser console logs", getConsoleLogs());
