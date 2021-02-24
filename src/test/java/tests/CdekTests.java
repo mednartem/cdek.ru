@@ -31,7 +31,7 @@ public class CdekTests extends TestBase {
     @Feature("Authorization")
     @Tag("authorization")
     @Disabled("Need credentials for authorization")
-    @DisplayName("Successful authorization")
+    @DisplayName("Unsuccessful authorization")
     void successLoginTest() {
         step("Open Login page", () -> open("https://lk.cdek.ru/user/login"));
         step("Authorization user", () -> {
@@ -45,7 +45,7 @@ public class CdekTests extends TestBase {
     @Test
     @Feature("Authorization")
     @Tag("authorization")
-    @DisplayName("Unsuccessful authorization")
+    @DisplayName("Successful authorization")
     void unSuccessfulLoginTest() {
         step("Open Login page", () -> open("https://lk.cdek.ru/user/login"));
         step("Auth with invalid login and password", () -> {
