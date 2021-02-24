@@ -15,7 +15,7 @@ public interface WebDriverConfig extends Config {
     @Key("remote.driver.user")
     String remoteDriverUser();
 
-    @Key("remote.driver.url")
+    @Key("remote.driver.password")
     String remoteDriverPassword();
 
 }
