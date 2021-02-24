@@ -10,6 +10,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
+import static config.WebDriverConfigHelper.getWebRemoteDriver;
+import static config.WebDriverConfigHelper.isRemoteWebDriver;
 import static helpers.AttachmentsHelper.*;
 
 public class TestBase {
@@ -24,8 +26,8 @@ public class TestBase {
         Configuration.baseUrl = "https://www.cdek.ru/ru/";
         Configuration.browserSize = "1600x1200";
         Configuration.browserCapabilities = capabilities;
-        if (System.getProperty("remote.browser.url") != null)
-            Configuration.remote = "https://user1:1234@" + System.getProperty("remote.browser.url") + ":4444/wd/hub/";
+        if (isRemoteWebDriver())
+            Configuration.remote = getWebRemoteDriver();
     }
 
     @AfterEach
