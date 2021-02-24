@@ -12,7 +12,6 @@ import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AttachmentsHelper.*;
 
-
 public class TestBase {
     @BeforeAll
     static void setup() {

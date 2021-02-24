@@ -1,7 +1,9 @@
 package tests;
 
+import io.qameta.allure.Feature;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.ClickOptions.usingJavaScript;
@@ -15,6 +17,8 @@ import static io.qameta.allure.Allure.step;
 public class CdekTests extends TestBase {
 
     @Test
+    @Feature("Main page")
+    @Tag("mainPage")
     @DisplayName("Valid open main page")
     void mainPageTest() {
         step("Open main page", () -> open(""));
@@ -24,6 +28,8 @@ public class CdekTests extends TestBase {
     }
 
     @Test
+    @Feature("Authorization")
+    @Tag("authorization")
     @Disabled("Need credentials for authorization")
     @DisplayName("Successful authorization")
     void successLoginTest() {
@@ -37,6 +43,8 @@ public class CdekTests extends TestBase {
     }
 
     @Test
+    @Feature("Authorization")
+    @Tag("authorization")
     @DisplayName("Unsuccessful authorization")
     void unSuccessfulLoginTest() {
         step("Open Login page", () -> open("https://lk.cdek.ru/user/login"));
@@ -54,6 +62,8 @@ public class CdekTests extends TestBase {
     }
 
     @Test
+    @Feature("Calculator page")
+    @Tag("calculator")
     @DisplayName("Check the operation of the calculator")
     void calculatorTest() {
         step("Open Calculate page", () -> open("calculate"));
@@ -72,6 +82,8 @@ public class CdekTests extends TestBase {
     }
 
     @Test
+    @Feature("Calculator page")
+    @Tag("calculator")
     @DisplayName("Check the operation of the parcel")
     void calculatorParcelTest() {
         step("Open Parcel page", () -> open("box"));
