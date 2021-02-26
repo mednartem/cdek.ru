@@ -4,6 +4,7 @@ import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.logging.LogType;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -12,7 +13,6 @@ import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static config.WebDriverConfigHelper.getWebVideoStorage;
-import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class AttachmentsHelper {
 
@@ -57,6 +57,6 @@ public class AttachmentsHelper {
     }
 
     public static String getConsoleLogs() {
-        return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
+        return String.join("\n", Selenide.getWebDriverLogs(LogType.BROWSER));
     }
 }

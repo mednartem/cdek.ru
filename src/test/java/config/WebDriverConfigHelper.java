@@ -28,6 +28,10 @@ public class WebDriverConfigHelper {
         return getConfig().remoteDriverUrl() != null;
     }
 
+    public static String getBrowserName() {
+        return getConfig().browserName();
+    }
+
     public static boolean isVideo() {
         return getConfig().isVideo();
     }
