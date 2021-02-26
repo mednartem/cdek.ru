@@ -17,8 +17,6 @@ public class DriverHelper {
         Configuration.pageLoadTimeout = 30000;
         Configuration.pageLoadStrategy = "eager";
         Configuration.headless = true;
-        Configuration.clickViaJs = true;
-        Configuration.fastSetValue = true;
         Configuration.timeout = 10000;
     }
 }
