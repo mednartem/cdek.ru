@@ -12,11 +12,8 @@ public class DriverHelper {
         addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
 
         Configuration.browser = CustomWebDriver.class.getName();
-        Configuration.baseUrl = "https://www.cdek.ru/ru/";
         Configuration.browserSize = "1600x1200";
-        Configuration.pageLoadTimeout = 30000;
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.headless = true;
+        Configuration.baseUrl = "https://www.cdek.ru/ru/";
         Configuration.timeout = 10000;
     }
 }

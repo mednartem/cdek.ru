@@ -10,16 +10,25 @@ Selenium autotests for Cdek.ru with use Allure and telegram
 * Allure plugin 2.8.1
 
 Then run tests with use terminal:
-Run local
-> gradle test
 
-Run remote (need to pass value remote.driver.url, remote.driver.user, remote.driver.password)
->  gradle clean test -Dremote.driver.url= -Dremote.driver.user= -Dremote.driver.password=
+Run local:
+* video (boolean true or false)
+> gradle test -Dvideo=
 
+Run remote need to pass value:
+
+* remote.driver.url (url address from selenoid or grid)
+* remote.driver.user (name user if required for available to selenoid/grid)
+* remote.driver.password (password user if required for available to selenoid/grid)
+* remote.browser.name (chrome, firefox)
+* video (boolean true or false)
+* web.threads (number of threads, default 2)
+
+> gradle clean -Dremote.driver.url= -Dremote.driver.user= -Dremote.driver.password= -Dremote.browser.name= -Dvideo= -Dthreads=
 
 Telegram notifications
 
-![Telegram](src/test/resources/telegram.jpg)
+![Telegram](src/test/resources/images/telegram.jpg)
 
 
 

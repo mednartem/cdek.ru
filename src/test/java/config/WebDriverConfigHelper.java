@@ -32,7 +32,7 @@ public class WebDriverConfigHelper {
         return getConfig().browserName();
     }
 
-    public static boolean isVideo() {
+    public static boolean isVideoOn() {
         return getConfig().isVideo();
     }
 
