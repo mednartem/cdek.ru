@@ -1,6 +1,8 @@
 package tests;
 
+import io.qameta.allure.AllureId;
 import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -17,6 +19,8 @@ import static io.qameta.allure.Allure.step;
 public class CdekTests extends TestBase {
 
     @Test
+    @AllureId("1733")
+    @Owner("Demyshev")
     @Feature("Main page")
     @Tag("mainPage")
     @DisplayName("Valid open main page")
@@ -28,6 +32,8 @@ public class CdekTests extends TestBase {
     }
 
     @Test
+    @AllureId("1732")
+    @Owner("Demyshev")
     @Feature("Authorization")
     @Tag("authorization")
     @Disabled("Need credentials for authorization")
@@ -43,6 +49,8 @@ public class CdekTests extends TestBase {
     }
 
     @Test
+    @AllureId("1731")
+    @Owner("Demyshev")
     @Feature("Authorization")
     @Tag("authorization")
     @DisplayName("Unsuccessful authorization")
@@ -62,6 +70,8 @@ public class CdekTests extends TestBase {
     }
 
     @Test
+    @AllureId("1734")
+    @Owner("Demyshev")
     @Feature("Calculator page")
     @Tag("calculator")
     @DisplayName("Check the operation of the calculator")
@@ -82,6 +92,8 @@ public class CdekTests extends TestBase {
     }
 
     @Test
+    @AllureId("1735")
+    @Owner("Demyshev")
     @Feature("Calculator page")
     @Tag("calculator")
     @DisplayName("Check the operation of the parcel")
