@@ -1,7 +1,7 @@
 # UI autotests for cdek.ru 
 
 ## Technology stack
-Java, Gradle, Junit5, Selenide, Allure Reports, Allure TestOps, Jenkins, Selenoid, Telegram Bot, Jira.
+Java, Gradle, Junit5, Selenide, Allure Report, Allure TestOps, Jenkins, Selenoid, Telegram Bot, Jira.
 
 ## Dependencies
 * Java 8
@@ -12,25 +12,22 @@ Java, Gradle, Junit5, Selenide, Allure Reports, Allure TestOps, Jenkins, Selenoi
 * Allure-selenide 2.13.7
 * Allure plugin 2.8.1
 * Allure TestOps 3.28.2
-* Telegram bot
-* Jira
+* Logback 1.2.3
 
 ## Run tests with use terminal:
 
-### Run local:
+### For run local tests need call command:
 
-* video (boolean true or false)
+> gradle test
 
-> gradle test -Dvideo=
-
-### Run remote need to pass value:
+### For run remote tests need fill example.properties or to pass value:
 
 * remote.driver.url (url address from selenoid or grid)
 * remote.driver.user (name user if required for available to selenoid/grid)
 * remote.driver.password (password user if required for available to selenoid/grid)
 * remote.browser.name (chrome, firefox)
 * video (boolean true or false)
-* web.threads (number of threads, default 2)
+* threads (number of threads, default 2)
 
 > gradle clean -Dremote.driver.url= -Dremote.driver.user= -Dremote.driver.password= -Dremote.browser.name= -Dvideo= -Dthreads=
 
@@ -40,7 +37,7 @@ Java, Gradle, Junit5, Selenide, Allure Reports, Allure TestOps, Jenkins, Selenoi
 #### Allure report
 ![Allure](src/test/resources/images/AllureReport1.png)
 
-#### Allure report video
+#### Selenoid video
 ![SelenoidGif](src/test/resources/images/SelenoidGif.gif)
 
 #### Allure Test Ops
