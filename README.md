@@ -36,6 +36,7 @@ Java, Gradle, Junit5, Selenide, Allure Report, Allure TestOps, Jenkins, Selenoid
 
 #### Allure report
 ![Allure](src/test/resources/images/AllureReport1.png)
+![Allure2](src/test/resources/images/AllureReport2.png)
 
 #### Selenoid video
 ![SelenoidGif](src/test/resources/images/SelenoidGif.gif)
