@@ -68,7 +68,6 @@ public class CustomWebDriver implements WebDriverProvider {
         chromeOptions.addArguments("--disable-notifications");
         chromeOptions.addArguments("--disable-infobars");
         chromeOptions.addArguments("--disable-gpu");
-        chromeOptions.addArguments("--window-size=1920,1080");
 //        chromeOptions.addArguments("--headless");
 
         return chromeOptions;
